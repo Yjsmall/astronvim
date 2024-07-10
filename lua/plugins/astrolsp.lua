@@ -17,7 +17,6 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -30,9 +29,14 @@ return {
         -- "lua_ls",
       },
       timeout_ms = 1000, -- default format timeout
-      -- filter = function(client) -- fully override the default formatting function
-      --   return true
-      -- end
+      filter = function(client) -- fully override the default formatting function
+        local file = io.open("xmake.lua", "r")
+        if file then
+          io.close(file)
+          return false
+        end
+        return true
+      end,
     },
     capabilities = {
       workspace = {
