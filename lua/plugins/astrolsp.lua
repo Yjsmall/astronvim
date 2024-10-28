@@ -57,7 +57,7 @@ return {
           "--all-scopes-completion", -- 全局补全(补全建议会给出在当前作用域不可见的索引,插入后自动补充作用域标识符),例如在main()中直接写cout,即使没有`#include <iostream>`,也会给出`std::cout`的建议,配合"--header-insertion=iwyu",还可自动插入缺失的头文件
           "--background-index", -- 后台分析并保存索引文件
           "--clang-tidy", -- 启用 Clang-Tidy 以提供「静态检查」
-          "--compile-commands-dir=${workspaceFolder}/build", -- 编译数据库(compile_commands.json 文件)的目录位置
+          "--compile-commands-dir=${workspaceFolder}/build,${workspaceFolder}", -- 编译数据库(compile_commands.json 文件)的目录位置
           "--completion-parse=auto", -- 当 clangd 准备就绪时，用它来分析建议
           "--completion-style=detailed", -- 建议风格：打包(重载函数只会给出一个建议);还可以设置为 detailed
           -- 启用配置文件(YAML格式)
