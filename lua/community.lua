@@ -9,6 +9,7 @@ return {
   { import = "astrocommunity.utility.lua-json5" },
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
+  { import = "astrocommunity.completion.blink-cmp" },
 
   -- import/override with your plugins folder
 }
